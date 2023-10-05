@@ -22,6 +22,473 @@
     <title>Taylr.</title>
 </head>
 
+    <style>
+        :root {
+    --font-family-default: 'Raleway', sans-serif;
+    --font-family-2: 'Roboto', sans-serif;
+    --dark-black: #303030;
+    --grey: #F0F0F0;
+    --primary: #ff0088;
+}
+
+::selection {
+    color: #ffffff;
+    background-color: var(--primary);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family-default);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+    width: 2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 2rem;
+    border: .6rem solid transparent;
+    background-clip: content-box;
+}
+
+
+/* navbar styling */
+/* navbar toggle class */
+.nav_off{
+    right: -100%;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 1rem -1rem 2rem;
+    transition: all .7s ease-in-out;
+    z-index: 1001;
+}
+
+nav i{
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 3rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 2rem;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 2.2rem;
+    text-transform: capitalize;
+    padding: 10px;
+    transition: all .2s linear;
+}
+
+nav ul li a:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+#menu{
+    position: fixed;
+    height: 8rem;
+    left: 8rem;
+    cursor: pointer;
+}
+
+
+/* main content styling */
+
+.main {
+    width: 80%;
+    min-height: 100vh;
+    margin: auto;
+    padding: 4rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--dark-black);
+    font-size: 6rem;
+    font-family: var(--font-family-2);
+    letter-spacing: .1rem;
+}
+
+header h1 span {
+    color: var(--primary);
+    font-family: var(--font-family-2);
+}
+
+header .download_btn {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-radius: 5rem;
+    padding: 0.9rem 1.9rem;
+    background-color: var(--primary);
+    transition: all .2s linear;
+}
+
+header .download_btn:hover {
+    background-color: #ffffff;
+    color: var(--primary);
+}
+
+
+/* main content styling */
+
+.service_report {
+    min-height: 40vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    
+}
+
+.service_report>h1 {
+    font-size: 3.3rem;
+    font-family: var(--font-family-2);
+}
+
+
+
+.service_report_right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.1rem;
+
+}
+
+.service_report_right span {
+    font-weight: bold;
+}
+
+
+/* service overview section styling */
+
+.service_overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.service_overview>h1 {
+    color: var(--primary);
+    font-size: 2.3rem;
+    font-family: var(--font-family-2);
+}
+
+.service_overview div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.service_overview div span {
+    text-align: right;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    border-bottom: 2px dotted var(--grey);
+    font-weight: bold;
+}
+
+.service_overview div p {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    border-bottom: 2px dotted var(--grey);
+}
+
+/* ac units section styling */
+.ac_unit_container {
+    margin-top: 6rem;
+    min-height: 37vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
+}
+
+.ac_unit_container>div.ac_item_container h1 {
+    font-size: 1.6rem;
+}
+
+.ac_unit_container div.ac_item_container>div {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 86%;
+}
+
+.ac_unit_container div.ac_item_container>div>div {
+    display: grid;
+}
+
+.ac_unit_container div.ac_item_container>div>div:last-child {
+    text-align: right;
+}
+
+.ac_unit_container div.ac_item_container>div>div span {
+    border-bottom: 2px dotted var(--grey);
+    padding-top: 1.2rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+/* test info section styling - 1 */
+
+.more_info {
+    margin-top: 5rem;
+    width: 100%;
+    height: 60vh;
+    /* border: 2px solid red; */
+}
+
+.more_info h1 {
+    font-size: 2.3rem;
+    color: var(--primary);
+    font-family: var(--font-family-2);
+    padding-bottom: 1.6rem;
+}
+
+.more_info>div {
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.3rem;
+}
+
+.more_info div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.3rem;
+}
+
+.more_info div span {
+    border-bottom: 2px dotted var(--grey);
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.more_info div span::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0.5rem;
+    background: url(/img/checked.svg) no-repeat center center/cover;
+    height: 2.4rem;
+    width: 2.4rem;
+    z-index: 1000;
+}
+
+.test_info div span:nth-child(3)::after {
+    background: url(/img/pass.svg) no-repeat center center/cover;
+    height: 2.2rem;
+    width: 5.1rem;
+}
+
+/* optional add ons section styling - 2*/
+
+.optional_add_ons div span:first-child {
+    font-weight: bold;
+    font-family: var(--font-family-2);
+    font-size: 1.4rem;
+}
+
+.optional_add_ons div span:first-child::after {
+    display: none;
+}
+
+.optional_add_ons div span:nth-child(2)::after {
+    background: url(/img/pass.svg) no-repeat center center/cover;
+    height: 2.2rem;
+    width: 5.1rem;
+}
+
+.optional_add_ons div span:nth-child(3)::before {
+    content: '72';
+    position: absolute;
+    right: 4.7rem;
+    bottom: 0.7rem;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+/* laundary ventilation styling - 3  */
+
+.laundary_container {
+    height: 65vh;
+    /* border: 2px solid red; */
+}
+
+.laundary_container h1 {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--font-family-2);
+    text-transform: uppercase;
+    padding-bottom: 1.6rem;
+    border-bottom: 2px dotted var(--grey);
+}
+
+.laundary_container div {
+    margin-top: 1.5rem;
+}
+
+.laundary_container div span:nth-child(2) {
+    padding: 1rem 0 6rem 1.5rem;
+    border: 2px dotted var(--grey);
+    border-top: none;
+}
+
+.laundary_container div span:nth-child(2)::after {
+    display: none;
+}
+
+.laundary_container div span:nth-child(3)::before {
+    content: '32';
+    position: absolute;
+    right: 4.7rem;
+    bottom: 0.7rem;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.laundary_container>div span:first-child::after {
+    background: url(/img/fail.svg) no-repeat center center/cover;
+    height: 2.2rem;
+    width: 5.1rem;
+}
+
+/* bottom section styling */
+
+.note_img {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.note_img label {
+    font-size: 2.3rem;
+    font-family: var(--font-family-2);
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.note_img form textarea {
+    height: 10rem;
+    width: 100%;
+    outline: none;
+    border: 2px dotted var(--grey);
+    padding: .5rem;
+    font-family: var(--font-family-2);
+    font-size: 1.5rem;
+    margin: 2.2rem 0;
+}
+
+.note_img h1 {
+    font-size: 2.3rem;
+    font-family: var(--font-family-2);
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.note_img img {
+    height: 15rem;
+    width: 20rem;
+    margin: 2.5rem 2rem 4rem 0;
+}
+
+.quote {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 0;
+    border-bottom: 2px dotted var(--grey);
+}
+
+.quote span {
+    font-size: 1.2rem;
+}
+
+.quote img {
+    margin: 0 1rem;
+    height: 2.2rem;
+    width: auto;
+}
+
+
+/* footer styling */
+
+footer {
+    height: 20vh;
+    width: 90%;
+    background-color: var(--dark-black);
+    display: flex;
+    align-items: center;
+    padding: 0 10.5rem;
+    margin: 2rem auto 0 auto;
+}
+
+footer h1 {
+    color: #ffffff;
+    font-size: 6rem;
+    letter-spacing: .1rem;
+    font-family: var(--font-family-2);
+}
+
+footer h1 span {
+    color: var(--primary);
+    font-family: var(--font-family-2);
+}
+        
+    </style>
+
 <body>
 
 

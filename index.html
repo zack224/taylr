@@ -486,6 +486,79 @@ footer h1 span {
     color: var(--primary);
     font-family: var(--font-family-2);
 }
+
+        @media screen and (max-width: 1174px) {
+    #menu {
+        left: 2rem;
+        top: 2rem;
+    }
+    footer {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .service_report {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        min-height: 50vh;
+    }
+
+    .service_report_right {
+        text-align: left;
+        line-height: 2rem;
+    }
+
+    .ac_unit_container {
+        grid-template-columns: 1fr;
+        gap: 6rem;
+    }
+
+    .more_info div {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header h1, footer h1{
+        font-size: 4.5rem;
+    }
+    header .download_btn{
+        font-size: 1rem;
+    }
+    #menu{
+        height: 6rem;
+    }
+    .more_info div span::after {
+        display: none;
+    }
+    .nav{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main{
+        width: 90%;
+    }
+    footer{
+        padding: 0 5.5rem;
+    }
+    .nav_off{
+        right: -130%;
+    }
+    header .download_btn{
+        font-size: .6rem;
+    }
+    #menu{
+        left: 1.2rem;
+        top: 1.2rem;
+        height: 5rem;
+    }
+}
         
     </style>
 
